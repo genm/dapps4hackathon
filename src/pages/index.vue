@@ -3,10 +3,10 @@
     <div>
       <app-logo/>
       <h1 class="title">
-        dapps4hackathon
+        MyHive
       </h1>
       <h2 class="subtitle">
-        NEO hackathon 2018
+        Alphive LLC.
       </h2>
       <div class="links">
         <nuxt-link to="neo_playground">
@@ -18,6 +18,9 @@
         <nuxt-link to="registreted">
           <p class="button--grey">Registreted</p>
         </nuxt-link>
+        <nuxt-link to="submit">
+          <p class="button--grey">Submit</p>
+        </nuxt-link>
 
       </div>
     </div>
@@ -25,7 +28,6 @@
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
 
 export default {
   components: {
