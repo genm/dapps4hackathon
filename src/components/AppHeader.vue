@@ -13,6 +13,7 @@
     <div class="navbar-menu" id="navMenu" :class="{'is-active': isMenuActive}">
       <div class="navbar-end">
         <nuxt-link to="/" class="navbar-item">Top</nuxt-link>
+        <nuxt-link to="/neo_playground" class="navbar-item">Playground</nuxt-link>
         <nuxt-link to="/mylist" class="navbar-item">MyList</nuxt-link>
         <nuxt-link to="/registration" class="navbar-item">Registration</nuxt-link>
         <nuxt-link to="/registreted" class="navbar-item">Registreted</nuxt-link>

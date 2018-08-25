@@ -5,8 +5,8 @@
       <input class="input" type="text" placeholder="e.g. Neo Blockchain Challenge">
     </div>
     <div>
-      <p>Amount</p>
-      <input class="input" type="text" placeholder="">
+      <p>GAS</p>
+      <input class="input" type="text" placeholder="1 GAS = 10 Degrees">
     </div>
     <a class="button is-primary">Publish</a>
   </div>

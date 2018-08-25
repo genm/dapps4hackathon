@@ -8,7 +8,7 @@
       <h2 class="subtitle">
         Alphive LLC.
       </h2>
-      <p>wif:{{ $store.state.wif }}</p>
+      <p v-if="$store.state.wif">Address:{{ $store.state.address }}</p>
       <div class="links">
         <!--<nuxt-link to="neo_playground">-->
           <!--<p class="button&#45;&#45;green">Neo Playground</p>-->

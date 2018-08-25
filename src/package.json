@@ -19,6 +19,7 @@
     "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
+    "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/font-awesome": "^1.0.3",
     "@nuxtjs/localforage": "^1.0.2",
     "@nuxtjs/pwa": "^2.3.0",

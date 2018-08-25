@@ -8,15 +8,13 @@
             </figure>
           </div>
           <div class="media-content">
-            <p class="title is-4">{{ card.title }}</p>
-            <p class="subtitle is-6">{{ cardCard.vue }}</p>
+            <p class="title is-4">{{ card.degree }}</p>
+            <p class="subtitle is-6">{{ card.owner }}</p>
           </div>
         </div>
 
         <div class="content">
-          {{ card.description }}
-          <br>
-          <time datetime="2016-1-1">{{ card.date }}</time>
+          Total issued: {{ card.amount }}
         </div>
       </div>
     </div>
