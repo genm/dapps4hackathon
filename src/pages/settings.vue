@@ -8,10 +8,11 @@
         <p class="is-size-4">Your WIF Key</p>
       </div>
       <div class="list-group-item">
-        <input class="input" type="text" placeholder="">
+        <input v-model="wif" class="input" type="text" placeholder="">
       </div>
       <div class="list-group-item">
-        <a class="button is-primary is-medium">Save</a>
+        <!--<a class="button is-primary is-medium" v-on:click=import_wif()>Save</a>-->
+        <a class="button is-primary is-medium" v-on:click="$store.commit('import_wallet', wif)">Save</a>
       </div>
 
     </div>
@@ -19,5 +20,10 @@
 </template>
 
 <script>
+  export default {
+    computed: {
 
+//      import_wif(txt) { return this.$store.commit('import_wallet', txt)}
+    }
+  }
 </script>
