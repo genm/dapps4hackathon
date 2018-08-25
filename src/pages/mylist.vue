@@ -2,7 +2,7 @@
   <section class="container">
     <div class="list-group">
       <div class="list-group-item">
-        <h1>あなたの称号一覧</h1><hr>
+        <h1>Your degree list</h1><hr>
       </div>
       <div class="list-group-item">
         <card-list v-bind:cards="cards"></card-list>
