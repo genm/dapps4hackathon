@@ -1,6 +1,13 @@
 <template>
   <section class="container">
-    <card-list v-bind:cards="cards"></card-list>
+    <div class="list-group">
+      <div class="list-group-item">
+        <h1>あなたの称号一覧</h1><hr>
+      </div>
+      <div class="list-group-item">
+        <card-list v-bind:cards="cards"></card-list>
+      </div>
+    </div>
   </section>
 </template>
 
