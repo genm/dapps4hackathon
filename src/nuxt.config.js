@@ -25,7 +25,8 @@ module.exports = {
    */
   modules: [
     '@nuxtjs/bulma',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/font-awesome'
   ],
 
   /*
@@ -44,7 +45,17 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+    },
+
+    postcss: {
+      plugins: {
+        'postcss-custom-properties': {
+          warnings: false
+        }
+      }
     }
+
+
   }
 }
 

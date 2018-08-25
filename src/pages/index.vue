@@ -10,13 +10,12 @@
       </h2>
       <div class="links">
         <nuxt-link to="neo_playground">
-        <p
-          class="button--green">Neo Playground</p>
+          <p class="button--green">Neo Playground</p>
         </nuxt-link>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+        <nuxt-link to="registration">
+          <p class="button--grey">Registration</p>
+        </nuxt-link>
+
       </div>
     </div>
   </section>
