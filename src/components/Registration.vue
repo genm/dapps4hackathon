@@ -11,3 +11,7 @@
     <a class="button is-primary">Publish</a>
   </div>
 </template>
+
+<script>
+
+</script>

@@ -26,7 +26,8 @@ module.exports = {
   modules: [
     '@nuxtjs/bulma',
     '@nuxtjs/pwa',
-    '@nuxtjs/font-awesome'
+    '@nuxtjs/font-awesome',
+    '@nuxtjs/localforage'
   ],
 
   /*

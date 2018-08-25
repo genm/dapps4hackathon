@@ -9,18 +9,24 @@
         Alphive LLC.
       </h2>
       <div class="links">
-        <nuxt-link to="neo_playground">
-          <p class="button--green">Neo Playground</p>
-        </nuxt-link>
-        <nuxt-link to="registration">
-          <p class="button--grey">Registration</p>
-        </nuxt-link>
-        <nuxt-link to="registreted">
-          <p class="button--grey">Registreted</p>
-        </nuxt-link>
-        <nuxt-link to="submit">
-          <p class="button--grey">Submit</p>
-        </nuxt-link>
+        <!--<nuxt-link to="neo_playground">-->
+          <!--<p class="button&#45;&#45;green">Neo Playground</p>-->
+        <!--</nuxt-link>-->
+        <!--<nuxt-link to="mylist">-->
+          <!--<p class="button&#45;&#45;grey">MyList</p>-->
+        <!--</nuxt-link>-->
+        <!--<nuxt-link to="registration">-->
+          <!--<p class="button&#45;&#45;grey">Registration</p>-->
+        <!--</nuxt-link>-->
+        <!--<nuxt-link to="registreted">-->
+          <!--<p class="button&#45;&#45;grey">Registreted</p>-->
+        <!--</nuxt-link>-->
+        <!--<nuxt-link to="submit">-->
+          <!--<p class="button&#45;&#45;grey">Give</p>-->
+        <!--</nuxt-link>-->
+        <!--<nuxt-link to="settings">-->
+          <!--<p class="button&#45;&#45;grey">Setting</p>-->
+        <!--</nuxt-link>-->
 
       </div>
     </div>
@@ -31,7 +37,7 @@
 
 export default {
   components: {
-    AppLogo
+
   }
 }
 </script>

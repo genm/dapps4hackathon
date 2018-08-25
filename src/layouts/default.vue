@@ -1,11 +1,25 @@
 <template>
   <div>
+    <app-header></app-header>
     <nuxt/>
   </div>
 </template>
 
+<script>
+  import AppHeader from '../components/AppHeader.vue'
+  export default {
+    components: {
+      AppHeader
+    },
+    methods: {
+
+    }
+  }
+
+</script>
+
 <style>
-html {
+  html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
