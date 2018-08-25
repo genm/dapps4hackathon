@@ -15,6 +15,9 @@
         <nuxt-link to="registration">
           <p class="button--grey">Registration</p>
         </nuxt-link>
+        <nuxt-link to="registreted">
+          <p class="button--grey">Registreted</p>
+        </nuxt-link>
 
       </div>
     </div>
