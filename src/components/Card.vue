@@ -8,15 +8,15 @@
             </figure>
           </div>
           <div class="media-content">
-            <p class="title is-4">{{ title }}</p>
-            <p class="subtitle is-6">{{ sub }}</p>
+            <p class="title is-4">{{ card.title }}</p>
+            <p class="subtitle is-6">{{ card.sub }}</p>
           </div>
         </div>
 
         <div class="content">
-          {{ description }}
+          {{ card.description }}
           <br>
-          <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+          <time datetime="2016-1-1">{{ card.date }}</time>
         </div>
       </div>
     </div>
@@ -25,12 +25,7 @@
 <script>
 
   export default {
-    props: {
-      title: String,
-      sub: String,
-      description: String,
-      time: String
-    },
+    props: ['card'],
     components: {
 
     }

@@ -1,20 +1,24 @@
 <template>
   <section class="container">
-    <card></card>
+    <card-list v-bind:cards="cards"></card-list>
   </section>
 </template>
 
 <script>
-  import Card from '../components/Card.vue'
+  import CardList from '../components/CardList.vue'
+  import data from "~/static/dummy_data.json"
+
   export default {
-    props: {
-      title: String,
-      sub: String,
-      description: String,
-      time: String
-    },
     components: {
-      Card
+      CardList,
+    },
+    methods: {
+
+    },
+    data(){
+      return {
+        cards: data.degrees
+      }
     }
   }
 </script>
