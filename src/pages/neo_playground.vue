@@ -10,6 +10,7 @@
 <script>
 import axios from 'axios'
 import CardList from '../components/DCardList.vue'
+import data from "~/static/dummy_data.json"
 
 import { mapActions } from 'vuex'
 import Neon from '@cityofzion/neon-js';
