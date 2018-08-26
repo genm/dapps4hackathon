@@ -16,15 +16,7 @@ import { mapActions } from 'vuex'
 import Neon from '@cityofzion/neon-js';
 
 const neo_node = 'http://131.113.137.59:30333';
-const getdegree = {
-  "jsonrpc": "2.0",
-  "method": "getstorage",
-  "params": [
-    '030cc92f31b8868868e093239e26b351df232e32',
-    '6d11841807b62e3666c73c0b8f1078ea0fd9e3a04e656f4861636b6174686f6e6e616d65'
-  ],
-  "id": 15
-};
+
 
 export default {
   components: {
