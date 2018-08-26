@@ -5,15 +5,19 @@
         <h1>All Issued Degrees</h1><hr>
       </div>
       <div class="list-group-item">
-        <card-list v-if="$store.state.wif" v-bind:pbcards="pbcards"></card-list>
+        <card-list v-if="$store.state.wif" v-bind:cards="cards"></card-list>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+  import axios from 'axios'
+
   import CardList from '../components/DCardList.vue'
   import data from "~/static/dummy_data.json"
+  import Neon from '@cityofzion/neon-js';
+  const neo_node = 'http://131.113.137.59:30333';
 
   export default {
     components: {
@@ -54,7 +58,7 @@
     },
     data(){
       return {
-        pbcards: this.$store.state.list
+        cards: this.$store.state.list
       }
     }
   }
