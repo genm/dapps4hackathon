@@ -17,7 +17,7 @@
   import data from "~/static/dummy_data.json"
   import Neon from '@cityofzion/neon-js';
 
-  const neo_node = 'http://131.113.137.59:30333';
+  const neo_node = 'http://localhost:30333';
 
   export default {
     components: {
@@ -49,7 +49,7 @@
 //          "jsonrpc": "2.0",
 //          "method": "getstorage",
 //          "params": [
-//            '030cc92f31b8868868e093239e26b351df232e32',//Neon.u.reverseHex(myAddress),
+//            '1737736d82de84b7ded7f83a3c0cc14b1c5fdab6',//Neon.u.reverseHex(myAddress),
 //            item.value
 //          ],
 //          "id": 15
@@ -57,7 +57,7 @@
 //          "jsonrpc": "2.0",
 //          "method": "getstorage",
 //          "params": [
-//            '030cc92f31b8868868e093239e26b351df232e32',//Neon.u.reverseHex(myAddress),
+//            '1737736d82de84b7ded7f83a3c0cc14b1c5fdab6',//Neon.u.reverseHex(myAddress),
 //            item.degree
 //          ],
 //          "id": 15
