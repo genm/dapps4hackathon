@@ -15,9 +15,11 @@
   import axios from 'axios'
   import CardList from '../components/DCardList.vue'
   import data from "~/static/dummy_data.json"
-  import Neon from '@cityofzion/neon-js';
+  const neonjs = require('@cityofzion/neon-js');
+  var Neon = neonjs.default;
 
-  const neo_node = 'http://131.113.137.59:30333';
+//  const neo_node = 'http://131.113.137.59:30333';
+  const neo_node = 'http://localhost:30333';
 
   export default {
     components: {
@@ -34,39 +36,35 @@
     mounted(){
       const account = Neon.create.account(this.$store.state.wif);
       const myAddress = account.address;
-      this.$store.state.list =[];
-      console.log(data.symbols);
 
-      for( var i=0; i<data.symbols.length; i++) {
+      for( var item in data.symbols) {
 
-        console.log( data.symbols[i] );
+        var key = item+Neon.u.reverseHex(neonjs.wallet.getScriptHashFromAddress('AUHvAsU45Ee7gDpgJGyEfDyuWJPBb5dakf'))
+
+        Promise.all([axios.post(neo_node,{
+          "jsonrpc": "2.0",
+          "method": "getstorage",
+          "params": [
+            '030cc92f31b8868868e093239e26b351df232e32',//Neon.u.reverseHex(myAddress),
+            key
+          ],
+          "id": 15
+        }),
+          // degree
+          axios.post(neo_node,{
+          "jsonrpc": "2.0",
+          "method": "getstorage",
+          "params": [
+            '030cc92f31b8868868e093239e26b351df232e32',//Neon.u.reverseHex(myAddress),
+            item.degree
+          ],
+          "id": 15
+        })]).then((res) => {
+          this.$store.commit('pushList', {"amount":"", "degree":Neon.u.hexstring2str(res[1].data.result) });
+          console.log(res.data)
+        })
 
       }
-
-//      for (var item of data.symbols ){
-//        console.log("hello")
-//        Promise.all([axios.post(neo_node,{
-//          "jsonrpc": "2.0",
-//          "method": "getstorage",
-//          "params": [
-//            '030cc92f31b8868868e093239e26b351df232e32',//Neon.u.reverseHex(myAddress),
-//            item.value
-//          ],
-//          "id": 15
-//        }), axios.post(neo_node,{
-//          "jsonrpc": "2.0",
-//          "method": "getstorage",
-//          "params": [
-//            '030cc92f31b8868868e093239e26b351df232e32',//Neon.u.reverseHex(myAddress),
-//            item.degree
-//          ],
-//          "id": 15
-//        })]).then((res) => {
-//          this.$store.commit('pushList', {"amount":res[0].data.result, "degree":Neon.u.hexstring2str(res[1].data.result) });
-//          console.log(res.data)
-//        })
-
-//      }
 
     }
   }
