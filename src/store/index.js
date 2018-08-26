@@ -8,6 +8,7 @@ const createStore = () => {
       reload:true,
       address:"",
       published:[],
+      mylist: [],
       list: []
     },
     mutations: {
@@ -22,6 +23,9 @@ const createStore = () => {
       },
       pushList(state, list){
         state.list.push(list)
+      },
+      pushmyList(state, list){
+        state.mylist.push(list)
       },
       setReload(state){
         state.reload = true;
