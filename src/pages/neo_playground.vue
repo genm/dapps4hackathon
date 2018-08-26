@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <card-list v-bind:cards="$store.state.list"></card-list>
+    <card-list v-if="$store.state.wif" v-bind:cards="cards"></card-list>
     <!--<card v-bind:card="{degree:'aaaa', owner:'who' ,amount:'33'}"></card>-->
 
   </div>
@@ -14,16 +14,8 @@ import data from "~/static/dummy_data.json"
 
 import { mapActions } from 'vuex'
 import Neon from '@cityofzion/neon-js';
+
 const neo_node = 'http://131.113.137.59:30333';
-const getamount = {
-  "jsonrpc": "2.0",
-  "method": "getstorage",
-  "params": [
-    '030cc92f31b8868868e093239e26b351df232e32',
-    '6d11841807b62e3666c73c0b8f1078ea0fd9e3a04e656f4861636b6174686f6e616d6f756e74'
-  ],
-  "id": 15
-};
 const getdegree = {
   "jsonrpc": "2.0",
   "method": "getstorage",
@@ -35,7 +27,6 @@ const getdegree = {
 };
 
 export default {
-  props: ['cards'],
   components: {
     CardList
 
@@ -60,9 +51,26 @@ export default {
 //      })
     const account = Neon.create.account(this.$store.state.wif);
     const myAddress = account.address;
+    this.$store.state.list =[];
 
     for (var item of data.dm_degree ){
-      Promise.all([axios.post(neo_node,getamount),axios.post(neo_node,getdegree)]).then((res) => {
+      Promise.all([axios.post(neo_node,{
+        "jsonrpc": "2.0",
+        "method": "getstorage",
+        "params": [
+          '030cc92f31b8868868e093239e26b351df232e32',//Neon.u.reverseHex(myAddress),
+          item.amount
+        ],
+        "id": 15
+      }), axios.post(neo_node,{
+        "jsonrpc": "2.0",
+        "method": "getstorage",
+        "params": [
+          '030cc92f31b8868868e093239e26b351df232e32',//Neon.u.reverseHex(myAddress),
+          item.degree_my
+        ],
+        "id": 15
+      })]).then((res) => {
         this.$store.commit('pushList', {"amount":res[0].data.result, "degree":Neon.u.hexstring2str(res[1].data.result) });
         console.log(res.data)
       })
@@ -70,6 +78,15 @@ export default {
     }
 
 
+
+
+
+  },
+
+  data(){
+    return {
+      cards: this.$store.state.list
+    }
   }
 
 }

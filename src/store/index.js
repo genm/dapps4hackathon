@@ -5,6 +5,7 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       wif: "",
+      reload:true,
       address:"",
       published:[],
       list: []
@@ -21,7 +22,14 @@ const createStore = () => {
       },
       pushList(state, list){
         state.list.push(list)
+      },
+      setReload(state){
+        state.reload = true;
+      },
+      stopReload(state){
+        state.reload = false;
       }
+
 
     }
   })
