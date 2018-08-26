@@ -13,11 +13,12 @@
     <div class="navbar-menu" id="navMenu" :class="{'is-active': isMenuActive}">
       <div class="navbar-end">
         <nuxt-link to="/" class="navbar-item">Top</nuxt-link>
-        <nuxt-link to="/neo_playground" class="navbar-item">Playground</nuxt-link>
+        <!--<nuxt-link to="/neo_playground" class="navbar-item">Playground</nuxt-link>-->
         <nuxt-link to="/mylist" class="navbar-item">MyList</nuxt-link>
         <nuxt-link to="/registration" class="navbar-item">Registration</nuxt-link>
         <nuxt-link to="/registreted" class="navbar-item">Registreted</nuxt-link>
         <nuxt-link to="/submit" class="navbar-item">Give</nuxt-link>
+        <nuxt-link to="/increace" class="navbar-item">Increace</nuxt-link>
         <nuxt-link to="/settings" class="navbar-item">Setting</nuxt-link>
         <!--<a class="navbar-item" v-if="isAuthed" v-on:click="logout">サインアウト</a>-->
         <!--<nuxt-link to="/login" class="navbar-item" v-if="!isAuthed">ログイン</nuxt-link>-->
@@ -54,5 +55,8 @@
     font-size: 25px;
     color: #35495e;
     letter-spacing: 1px;
+  }
+  .navbar {
+    background-color: #ECEFF1;
   }
 </style>

@@ -31,7 +31,7 @@
       const myAddress = account.address;
       this.$store.state.list =[];
 
-      for (var item of data.dm_degree ){
+      for (var item of data.all_degree ){
         Promise.all([axios.post(neo_node,{
           "jsonrpc": "2.0",
           "method": "getstorage",
@@ -45,7 +45,7 @@
           "method": "getstorage",
           "params": [
             '030cc92f31b8868868e093239e26b351df232e32',//Neon.u.reverseHex(myAddress),
-            item.degree_pb
+            item.degree
           ],
           "id": 15
         })]).then((res) => {
