@@ -34,7 +34,7 @@
 <script>
   var neonjs = require('@cityofzion/neon-js')
   var Neon = neonjs.default;
-  const ContractHash = '030cc92f31b8868868e093239e26b351df232e32';
+  const ContractHash = '1737736d82de84b7ded7f83a3c0cc14b1c5fdab6';
 
   export default {
     components: {
@@ -42,7 +42,7 @@
     },
     methods: {
       submit: () => {
-        const PrivateNeonDB = 'http://131.113.137.59:5000';
+        const PrivateNeonDB = 'http://localhost:5000';
         const account = Neon.create.account(document.getElementById('wif').value);
         const myAddress = account.address;
 

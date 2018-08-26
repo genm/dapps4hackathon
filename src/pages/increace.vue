@@ -17,7 +17,6 @@
 </template>
 
 <script>
-
   var neonjs = require('@cityofzion/neon-js');
   var Neon = neonjs.default;
 
@@ -38,7 +37,7 @@
           var sc = neonjs.sc;
           const registerDegreeProps = {
             scriptHash: ContractHash,
-            operation: 'registerDegree',
+            operation: 'increaseDegreeAmount',
             args: [
               sc.ContractParam.byteArray(myAddress, 'address'),
               sc.ContractParam.string(degree)
@@ -77,6 +76,5 @@
       }
     }
   }
-
 
 </script>
