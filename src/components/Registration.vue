@@ -21,7 +21,7 @@
   var neonjs = require('@cityofzion/neon-js')
   var Neon = neonjs.default;
 
-  const ContractHash = '6beeda0bf36c4954c7efd443145e2f3a78032433';
+  const ContractHash = '030cc92f31b8868868e093239e26b351df232e32';
 
 
   export default {

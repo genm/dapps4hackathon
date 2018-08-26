@@ -18,6 +18,9 @@ const createStore = () => {
       },
       setList(state, list){
         state.list = list
+      },
+      pushList(state, list){
+        state.list.push(list)
       }
 
     }

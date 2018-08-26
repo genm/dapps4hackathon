@@ -9,7 +9,7 @@
           </div>
           <div class="media-content">
             <p class="title is-4">{{ card.title }}</p>
-            <p class="subtitle is-6">{{ cardCard.vue }}</p>
+            <!--<p class="subtitle is-6">{{ cardCard.vue }}</p>-->
           </div>
         </div>
 

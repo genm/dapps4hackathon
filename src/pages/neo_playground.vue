@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <card-list v-bind:card="[{degree:$store.state.list.degree, owner:$store.state.list.owner ,amount:'33'},{degree:$store.state.list.degree, owner:$store.state.list.owner ,amount:'33'}]"></card-list>
+    <card-list v-bind:cards="$store.state.list"></card-list>
     <!--<card v-bind:card="{degree:'aaaa', owner:'who' ,amount:'33'}"></card>-->
 
   </div>
@@ -61,10 +61,14 @@ export default {
     const account = Neon.create.account(this.$store.state.wif);
     const myAddress = account.address;
 
-    Promise.all([axios.post(neo_node,getamount),axios.post(neo_node,getdegree)]).then((res) => {
-      this.$store.commit('setList', {"amount":res[0].data.result, "degree":Neon.u.hexstring2str(res[1].data.result) });
-      console.log(res.data)
-    })
+    for (var item of data.dm_degree ){
+      Promise.all([axios.post(neo_node,getamount),axios.post(neo_node,getdegree)]).then((res) => {
+        this.$store.commit('pushList', {"amount":res[0].data.result, "degree":Neon.u.hexstring2str(res[1].data.result) });
+        console.log(res.data)
+      })
+
+    }
+
 
   }
 
